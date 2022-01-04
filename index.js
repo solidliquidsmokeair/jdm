@@ -62,22 +62,27 @@ function showCar() {
     carImage.src = '/images/'+car[count].image+'.jpg'
 }
 
-function increaseCount() {
-    count++
+function decreaseCount() {
+    if(count === -1){
+        count = 0
+    } else
+    count--
     showCar()
 
 }
 
-function decreaseCount() {
-    count--
+function increaseCount() {
+    if(count === 4){
+        count = car.length -1
+    } else
+    count++
     showCar()
 
 }
 
 window.addEventListener('load', startUp = () => {
 
-    carMake.innerText = count
-    carModel.innerText = car[1].model
+   showCar()
     
 
 })
